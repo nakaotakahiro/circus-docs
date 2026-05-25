@@ -11,7 +11,11 @@ This script loads the latest API spec from the GitHub API.
 const url =
   'https://api.github.com/repos/utrad-ical/circus/git/trees/master?recursive=1';
 
+
+// This token is now optional.
+// Just be aware of GitHub's rate limits for unauthenticated requests (60 per hour).
 const token = process.env.CIRCUS_DOCS_GH_TOKEN;
+
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const categoryName = path => path.match(/src\/api\/(.+)\/index/)[1];
@@ -91,10 +95,6 @@ const load = async () => {
 };
 
 const main = async () => {
-  if (!token) {
-    console.log('Exiting because no token was detected.');
-    return;
-  }
   const routes = await load();
   await fs.writeFile(
     path.join(dirname, 'static/api.json'),
