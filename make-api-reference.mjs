@@ -1,23 +1,40 @@
-require('dotenv').config();
-const axios = require('axios');
-const yaml = require('js-yaml');
-const fs = require('fs').promises;
-const path = require('path');
+import 'dotenv/config';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import yaml from 'js-yaml';
 
 /*
 This script loads the latest API spec from the GitHub API.
-Due to the GitHub API's rate limit, we must use the user token.
-Set it using an environment var or the `.env` file.
 */
 
 const url =
   'https://api.github.com/repos/utrad-ical/circus/git/trees/master?recursive=1';
 
 const token = process.env.CIRCUS_DOCS_GH_TOKEN;
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const categoryName = path => path.match(/src\/api\/(.+)\/index/)[1];
 
 const asyncMap = async (arr, fn) => await Promise.all(arr.map(fn));
+
+const requestHeaders = () => ({
+  'User-Agent': 'circus-docs',
+  ...(token
+    ? {
+      Authorization:
+        'Basic ' + Buffer.from(`anyone:${token}`).toString('base64'),
+    }
+    : {}),
+});
+
+const fetchJson = async url => {
+  const res = await fetch(url, { headers: requestHeaders() });
+  if (!res.ok) {
+    throw new Error(`Request failed with ${res.status}: ${url}`);
+  }
+  return await res.json();
+};
 
 const fileExists = async path => {
   try {
@@ -29,12 +46,8 @@ const fileExists = async path => {
 };
 
 const load = async () => {
-  const res = await axios.request({
-    method: 'get',
-    url,
-    auth: { username: 'anyone', password: token },
-  });
-  const tree = res.data.tree;
+  const data = await fetchJson(url);
+  const tree = data.tree;
   const deny = ['debug', 'login-info', 'logout', 'plugin-displays'];
   const yamlFiles = tree
     .filter(t => /^packages\/circus-api\/src\/api\/.*\.yaml$/.test(t.path))
@@ -42,7 +55,7 @@ const load = async () => {
 
   const augumentWithExamples = async (category, route) => {
     const exampleFile = path.join(
-      __dirname,
+      dirname,
       'docs/dev/api-examples',
       category + '.md'
     );
@@ -56,12 +69,8 @@ const load = async () => {
   };
 
   const routes = await asyncMap(yamlFiles, async yamlFile => {
-    const blobRes = await axios.request({
-      method: 'get',
-      url: yamlFile.url,
-      ...(token ? { auth: { username: 'anyone', password: token } } : {}),
-    });
-    const yamlData = Buffer.from(blobRes.data.content, 'base64');
+    const blobData = await fetchJson(yamlFile.url);
+    const yamlData = Buffer.from(blobData.content, 'base64');
     const data = yaml.load(yamlData);
     const category = categoryName(yamlFile.path);
     return {
@@ -88,7 +97,7 @@ const main = async () => {
   }
   const routes = await load();
   await fs.writeFile(
-    __dirname + '/static/api.json',
+    path.join(dirname, 'static/api.json'),
     JSON.stringify(routes),
     'utf8'
   );

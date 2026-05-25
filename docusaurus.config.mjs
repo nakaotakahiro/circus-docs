@@ -111,7 +111,7 @@ const config = {
       'classic',
       {
         docs: {
-          sidebarPath: resolvePath('./sidebars.js'),
+          sidebarPath: resolvePath('./sidebars.mjs'),
           editUrl: 'https://github.com/utrad-ical/circus-docs/edit/main',
           remarkPlugins: [
             deflist,

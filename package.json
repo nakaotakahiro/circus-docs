@@ -9,7 +9,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "prebuild": "node make-api-reference",
+    "prebuild": "node make-api-reference.mjs",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -23,7 +23,6 @@
     "@docusaurus/preset-classic": "^3.10.1",
     "@mdx-js/react": "^3.1.1",
     "@utrad-ical/circus-icons": "^0.2.0",
-    "axios": "^1.16.1",
     "clsx": "^2.1.1",
     "docusaurus-plugin-sass": "^0.2.6",
     "dotenv": "^17.4.2",
