@@ -12,7 +12,7 @@ To make changes to an existing group, click on the line of the group whose setti
 
 ![Groups](./groups.png)
 
-:::caution
+:::warning
 
 As of July 2022, it is impossible to delete a group.
 
@@ -49,7 +49,9 @@ Download volume as raw file
 Issue Onetime
 : Privilege to issue temporary available login strings.
 
-### Settings Related to Projects {#project-settings}
+<a id="project-settings"></a>
+
+### Settings Related to Projects
 
 These are setting items related to CIRCUS DB projects. Authorization can be granted to multiple projects for each item.
 

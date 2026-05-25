@@ -4,7 +4,7 @@ title: Managing CAD Plug-ins
 
 Select [Administration] - [CAD Plug-ins] from the menu at the top of the screen to display the plug-in settings screen.
 
-:::caution
+:::warning
 
 You cannot register a new plug-in from this screen. To register a new plug-in, follow the steps described in [this page](./registration-cs-plugin).
 

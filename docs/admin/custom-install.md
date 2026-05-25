@@ -85,7 +85,7 @@ module.exports = {
 };
 ```
 
-:::caution
+:::warning
 
 Currently, no detailed documentation is available for each service, and the interface of each services are subject to change without notice.
 

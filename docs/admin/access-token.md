@@ -18,7 +18,7 @@ When you want to programmatically access CIRCUS REST API, or when you want to us
 
    ![Token created](token-created.png)
 
-:::caution
+:::warning
 
 The access token must be stored securely. Someone who knows this access token will be able to perform anything on behalf of the associated user.
 

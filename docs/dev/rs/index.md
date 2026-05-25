@@ -7,7 +7,7 @@ CIRCUS DB/CS is powered by **CIRCUS RS**, a lightweight medical image server and
 
 CIRCUS RS consists of the server part and the viewer (brower) part. RS Server is basically a small HTTP server that hosts DICOM images in the form of volumes, and RS Client is a framework-agnostic image viewer component that can display volume data obtained from an arbitrary resource, including RS Server.
 
-:::caution
+:::warning
 
 CIRCUS RS is intended to be used for research purposes, and it comes with absolutely no warranty.
 

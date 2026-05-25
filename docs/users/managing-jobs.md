@@ -52,7 +52,7 @@ If you try to register a job with the same combination of series and plugin as o
 
 :::
 
-:::caution
+:::warning
 
 At the moment, it is possible to specify any series as the input for a plug-in. A feature to declare the minimum conditions (such as modality) for series that the plugin can process will be implemented in the future.
 

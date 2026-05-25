@@ -69,7 +69,7 @@ Unlike users, **a series must belong to precisely one domain**. A series cannot 
 
 The list of available domains must first be declared via [Server Configuration](server-configuration.md). The `default` domain is the only predefined domain.
 
-:::caution
+:::warning
 If you are planning to use one CIRCUS installation for multiple research projects, you need to carefully think of the domains to use _before_ importing DICOM series to CIRCUS. Keep the following points in mind:
 
 - Currently, even administrators cannot change the domain of an already imported series.
@@ -92,7 +92,9 @@ CIRCUS DB's cases have an additional layer of access control based on the projec
 
 Currently, a user can access the data for any plug-in job as long as they have access to the processed series in the job (based on the domain rule described above). You cannot control the visibility of a specific plug-in or plug-in job based on a user or a group. In the future, a plug-in-based access control system (similar to the project-based access control of CIRCUS DB) may be added.
 
-## Personal Information Protection {#personal-info}
+<a id="personal-info"></a>
+
+## Personal Information Protection
 
 **Personal Information** refers to the following personal information contained in DICOM tags:
 
@@ -110,6 +112,6 @@ In CIRCUS, the visibility of personal information is controlled in three layers:
 
 When a user cannot access personal information, they cannot perform a search with personal information, either. For example, they cannot search for a patient even when they know the exact patient ID of a series.
 
-:::caution
+:::warning
 CIRCUS cannot anonymize personal information if it is embedded as an image in the pixel data itself. You may have to use a third-party tool to anonymize such DICOM data before importing them to CIRCUS.
 :::

@@ -2,7 +2,7 @@
 
 <ApiPreamble verb="get" path="/cases" />
 
-Required setting: [**Readable Projects**](../../../docs/admin/group-settings#project-settings)
+Required setting: [**Readable Projects**](../../../docs/admin/group-settings#settings-related-to-projects)
 
 ### Request
 
@@ -156,7 +156,7 @@ Content-Type: application/json
 
 <ApiPreamble verb="get" path="/cases/:caseId" />
 
-Required setting: [**Readable Projects**](../../../docs/admin/group-settings#project-settings)
+Required setting: [**Readable Projects**](../../../docs/admin/group-settings#settings-related-to-projects)
 
 ### Request
 
@@ -377,7 +377,7 @@ Content-Type: application/json
 
 <ApiPreamble verb="post" path="/cases/:caseId/revision" />
 
-Required setting: [**Writable Projects**](../../../docs/admin/group-settings#project-settings)
+Required setting: [**Writable Projects**](../../../docs/admin/group-settings#settings-related-to-projects)
 
 ### Request
 
@@ -447,7 +447,7 @@ HTTP/1.1 201
 <ApiPreamble verb="post" path="/cases/export-mhd" />
 
 Required global privilege: [**Download volume as raw file**](../../../docs/admin/group-settings#list-of-global-privileges)
-Required setting: [**Readable Projects**](../../../docs/admin/group-settings#project-settings)
+Required setting: [**Readable Projects**](../../../docs/admin/group-settings#settings-related-to-projects)
 
 ### Request
 
@@ -494,9 +494,9 @@ Content-Type: application/json
 
 <ApiPreamble verb="put" path="/cases/:caseId/tags" />
 
-Required setting: [**Writable Projects**](../../../docs/admin/group-settings#project-settings)
+Required setting: [**Writable Projects**](../../../docs/admin/group-settings#settings-related-to-projects)
 
-:::caution
+:::warning
 
 This API replaces all tags. If you want to add a new tag, please also fill in the previous tags.
 
@@ -521,7 +521,7 @@ HTTP/1.1 204
 
 <ApiPreamble verb="patch" path="/cases/tags" />
 
-Required setting: [**Writable Projects**](../../../docs/admin/group-settings#project-settings)
+Required setting: [**Writable Projects**](../../../docs/admin/group-settings#settings-related-to-projects)
 
 ### Request
 
@@ -554,9 +554,9 @@ HTTP/1.1 204
 
 <ApiPreamble verb="delete" path="/cases/:caseId" />
 
-Required setting: [**Moderate Projects**](../../../docs/admin/group-settings#project-settings)
+Required setting: [**Moderate Projects**](../../../docs/admin/group-settings#settings-related-to-projects)
 
-:::caution
+:::warning
 
 This API deletes even the case created by other user.
 

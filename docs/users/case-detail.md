@@ -206,7 +206,7 @@ This function allows you to find an oblique section that contains three Point la
 
 You can download the case data (original images, label data, case attributes).
 
-:::caution
+:::warning
 
 - Archive files are created on the server side, so unsaved labels cannot be downloaded. **You must save a revision** before using this feature.
 - You need sufficient privileges to do this. When the export menu is unavailable, consult the administrator.

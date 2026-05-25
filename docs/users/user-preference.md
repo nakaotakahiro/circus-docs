@@ -6,7 +6,7 @@ You can enter the Preference screen via the [Tool] - [Preference] link on the to
 
 ![Preferences](user-preference.png)
 
-:::caution
+:::warning
 Click the [Save] button after you have made any changes. Otherwise, your changes will be lost.
 :::
 

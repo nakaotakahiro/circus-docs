@@ -13,23 +13,6 @@ $ cd /var/circus/packages/circus-api
 $ node circus
 ```
 
-<!--
-If you have installed CIRCUS using the official Docker image, the CLI is already in the PATH. You can access it like this:
-
-```shell-session title="In the container"
-$ circus
-CIRCUS-API CLI version 0.4.0
-```
-
-If you have installed CIRCUS locally, the CLI is located at `/packages/circus-api/circus.js`. You may want to add this directory to the PATH or make an alias.
-
-```
-$ /path-to-circus/packages/circus-api/circus.js --version
-CIRCUS-API CLI version 0.4.0
-```
-
--->
-
 In the rest of this page, the CLI command is simply referred to as `circus`.
 
 ## See the List of Commands

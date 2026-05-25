@@ -163,6 +163,6 @@ Alternatively, your image can be hosted in Docker Hub or any other container reg
 
 Refer to the admin page: [Registration of CS Plug-ins](../../admin/registration-cs-plugin.mdx)
 
-:::caution
+:::warning
 Plug-ins are identified using the SHA-256 image hash. Thus you cannot change the content of the plug-in after installing it. When you have modified the content, rebuild the image and re-install it with a different version.
 :::

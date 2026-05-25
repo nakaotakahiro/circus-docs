@@ -1,12 +1,14 @@
 # Website
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 ## Installation
 
 ```console
 npm ci
 ```
+
+Node.js 24 and npm 11 are expected.
 
 ## Prebuild
 
@@ -33,4 +35,4 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
-We use [Netlify](https://www.netlify.com/) to build and deploy this documentation site.
+Configure your static hosting service to run `npm run build` and publish the `build` directory.

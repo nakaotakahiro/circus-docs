@@ -43,8 +43,10 @@ GET /api/plugins/85w1yc7xbzqjr7daf8mu6p2qj7f6a6vegzy4k9nf3vewv7sy32kvjrar49k70h3
 `updatedAt`
 : The date the plugin was updated, in ISO format. (date)
 
+### Available Icon Glyphs
+
 <details>
-<summary><a id="#AvailableIconGlyphs">Available Icon Glyphs</a></summary>
+<summary>Glyph names</summary>
 
 `"stomach"`,
 `"brain"`,

@@ -9,7 +9,7 @@ GET requests for searching resources (series, cases, jobs, etc.) accept shared q
 These are specified as URL query parameters (e.g., `?limit=10&page=2`). Special characters must be URL-encoded.
 
 `filter` (string)
-: Specifies the search criterion in JSON string. See [Forming Filters](#forming-filters) and [Available Filters](#available-filter).
+: Specifies the search criterion in JSON string. See [Forming Filters](#forming-filters) and [Available Filters](#available-filter-keys).
 
 `sort` (string)
 : Sort order of search results, in JSON string. A value of 1 means ascending and -1 means descending. The default is `{ createdAt: -1 }`.

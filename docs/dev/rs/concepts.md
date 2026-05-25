@@ -183,6 +183,6 @@ CIRCUS RS can be customized in the following ways.
 - Make your own `DicomFileRepository` if you have a lot of DICOM images stored somewhere (e.g., AWS S3) and want to serve them via CIRCUS RS Server.
 - Make your own `ImageSource` and design the corresponding `ViewState` if you want to display images using a new algorithm other than MPR or VR. Also, do this if your image is not based on 3D volumes.
 
-:::caution
+:::warning
 Do **not** extend or modify the `Viewer` and `Compositioin` classes.
 :::

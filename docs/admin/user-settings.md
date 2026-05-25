@@ -10,7 +10,7 @@ To create a new user, click the "Create new" button. After entering each item, c
 
 ![Create new user](create-new-user.png)
 
-:::caution
+:::warning
 
 You cannot modify the user's email address after creating a new user.
 

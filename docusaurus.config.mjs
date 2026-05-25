@@ -1,16 +1,30 @@
-const deflist = require('remark-deflist');
-const ghLinks = require('remark-github');
+import { fileURLToPath } from 'node:url';
+import deflist from 'remark-deflist';
+import ghLinks from 'remark-github';
 
-module.exports = {
+const resolvePath = path => fileURLToPath(new URL(path, import.meta.url));
+
+/** @type {import('@docusaurus/types').Config} */
+const config = {
   title: 'CIRCUS',
   tagline: 'Platform for Computer-aided Diagnosis Research',
   url: 'https://circus-project.net/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'utrad-ical', // Usually your GitHub org/user name.
-  projectName: 'circus', // Usually your repo name.
+  organizationName: 'utrad-ical',
+  projectName: 'circus',
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+    },
+    faster: true,
+  },
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
   themeConfig: {
     navbar: {
       title: 'CIRCUS',
@@ -25,13 +39,11 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
-        /* { to: 'blog', label: 'Blog', position: 'left' } , */
         {
           to: 'docs/admin/installation',
           label: 'Install',
           position: 'left',
         },
-        /* { to: 'api-explorer', label: 'API Explorer', position: 'left' }, */
         {
           to: 'docs/releases',
           label: 'Releases',
@@ -96,24 +108,21 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      'classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/utrad-ical/circus-docs/edit/master',
+          sidebarPath: resolvePath('./sidebars.js'),
+          editUrl: 'https://github.com/utrad-ical/circus-docs/edit/main',
           remarkPlugins: [
             deflist,
             [ghLinks, { repository: 'utrad-ical/circus' }],
           ],
         },
-        blog: {
-          showReadingTime: true,
-          editUrl: 'https://github.com/utrad-ical/circus-docs/edit/master',
-        },
+        blog: false,
         theme: {
           customCss: [
-            require.resolve('./src/css/custom.scss'),
-            require.resolve('./src/css/icons.scss'),
+            resolvePath('./src/css/custom.scss'),
+            resolvePath('./src/css/icons.scss'),
           ],
         },
       },
@@ -121,3 +130,5 @@ module.exports = {
   ],
   plugins: ['docusaurus-plugin-sass'],
 };
+
+export default config;

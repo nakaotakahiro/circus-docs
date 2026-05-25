@@ -10,7 +10,7 @@ This page was **auto-generated** from the contents of the [official CIRCUS repos
 
 The below is the list of all endpoints available in CIRCUS API.
 
-:::caution
+:::warning
 
 This section is still a work in progress.
 
