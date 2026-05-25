@@ -1,22 +1,19 @@
 import 'dotenv/config';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 
-/*
-This script loads the latest API spec from the GitHub API.
-*/
+// This script loads the latest API spec from the GitHub API.
 
 const url =
   'https://api.github.com/repos/utrad-ical/circus/git/trees/master?recursive=1';
 
 
 // This token is now optional.
-// Just be aware of GitHub's rate limits for unauthenticated requests (60 per hour).
+// Just be aware of GitHub's rate limits for unauthenticated requests.
 const token = process.env.CIRCUS_DOCS_GH_TOKEN;
 
-const dirname = path.dirname(fileURLToPath(import.meta.url));
+const dirname = import.meta.dirname;
 
 const categoryName = path => path.match(/src\/api\/(.+)\/index/)[1];
 
