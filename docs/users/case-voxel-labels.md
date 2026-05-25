@@ -10,8 +10,6 @@ By creating and activating a voxel label, the following tools become available.
 
 ![Voxel label-related tools](case-detail-painting-tools.png)
 
-import { Icon } from '../icon';
-
 <dl>
 <dt><Icon icon="rs-icon-brush" /> Brush (<kbd>B</kbd>)</dt>
 <dd>Paints the clicked position with a square pen.</dd>

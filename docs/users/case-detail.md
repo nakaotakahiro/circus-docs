@@ -36,8 +36,6 @@ You can control the left-drag behavior by selecting one of the tools on the tool
 
 ![Tool for left drag](case-detail-tool-for-left-drag.png)
 
-import { Icon } from '../icon';
-
 <dl>
 <dt><Icon icon="rs-icon-pager" /> Paging (<kbd>P</kbd>)</dt>
 <dd>Scrolls the current image.</dd>
