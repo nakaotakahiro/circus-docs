@@ -37,7 +37,6 @@ In CIRCUS, the status of a job transitions as follows.
 1. Go to [Series Search](./series-search.md) screen and find the series you want to make a case from. From the [+ New] dropdown menu, select "New Case".
 
 1. In the "New Job" screen, do the following:
-
    - Select the plug-in to execute.
    - (Optional) If only the subset of the series is used in the case, specify the image range by clicking "Range" button. By default ("auto"), all the images in the first consecutive segment of the series will be used.
    - (Optional) If you want a case with more than one series, click the "Add Series" button and add the series you need.

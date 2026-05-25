@@ -25,7 +25,6 @@ CIRCUS does not use DICOM tags related to patient information (0010,XXXX), such 
 ## Importing DICOM Files via Browser
 
 1. Go to the Series Import page using one of the following links.
-
    - [Series] - [Series Import] menu in the top menu.
      ![Menu - Series Import](./menu-series-import.png)
 

@@ -235,7 +235,6 @@ Introduced a new WebSocket-based volume loader. Now each slice of a DICOM series
 ### CIRCUS DB
 
 - Connected component labeling (CCL) and hole filling (HL) improvements:
-
   - They can now process more complexed voxel labels by making the number of intermediate labels variable. (#214)
   - They now use web workers, meaning they will no longer hurt browser responsiveness. (#172)
   - Fixed some bugs. (#189)
